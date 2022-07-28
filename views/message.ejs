@@ -1,0 +1,23 @@
+<%- include ('../views/layouts/header') -%>
+
+<ui class="comments">
+    <h3 class="ui dividing header">Commentaires</h3>
+
+    <div class="comment">
+        <a href="/message/<%= message.id %>" class="avatar">
+            <i class="icon user"></i>
+        </a>
+        <div class="content">
+            <div class="metadata">
+                <div class="date">
+                    <%= message.created_at %>
+                </div>
+            </div>
+            <div class="text">
+                <%= message.content %>
+            </div>
+        </div>
+    </div>
+</ui>
+
+<%- include ('../views/layouts/footer') -%>

@@ -1,0 +1,39 @@
+<%- include ('../views/layouts/header') -%>
+
+<form action="/" method="POST">
+    <div class="ui form">
+        <div class="field">
+            <label label="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+        </div>
+    </div>
+    
+    <button type="submit" class="ui blue labeled submit icon button" style="margin: 10px 0px 20px 0px;">
+        <i class="icon edit"></i> Envoyer
+    </button>
+</form>
+
+<ui class="comments">
+    <h3 class="ui dividing header">Commentaires</h3>
+
+    <% for (message of messages) { %>
+        <div class="comment">
+            <a href="/message/<%= message.id %>" class="avatar">
+                <i class="icon user"></i>
+            </a>
+            <div class="content">
+                <div class="text">
+                    <%= message.content %>
+                </div>
+
+                <div class="metadata">
+                    <div class="date">
+                        <%= message.created_at %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</ui>
+
+<%- include ('../views/layouts/footer') -%>
